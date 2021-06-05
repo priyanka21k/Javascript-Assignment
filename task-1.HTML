@@ -1,0 +1,58 @@
+<!doctype HTML>
+<html>
+	<head>
+		<title>Find & replace</title>
+	</head>
+	<body>
+                
+            <h1>Find and replace</h1>
+            <div id="haystack">
+             After a year's preparation,it was time to go backpacking with the Boy Scouts.We flew<br>
+             to Colorado Spring,toured the Air Force Acadamy,Pike's Peak,Garden of The Goads,<br>and
+             the Olympic training center.We chartered a bus to the Philmost Scout Ranch in <br>
+             Northern New Mexico and began our 60 mile backpack trek.Afterwards,we boarded<br>
+             Amatrack's and rode the rails to Kingman, and then charted a bus home.
+
+              
+           </div>
+          <br>
+          <form >
+          <table>
+          <tr>
+          <td>Find</td>
+          <td><input id="needle" name="needle" type="text"></td>
+          </tr>
+         
+           <tr>
+          <td>Replacement</td>
+          <td><input id="replacement" name="replacement" type="text"></td>
+          </tr>
+         </table>
+         
+        <input type="button" value="Find" onClick="findMyText(document.getElementById('needle').value,  document.getElementById('replacement' ).value);">
+         </form>
+         <script>
+                    function findMyText(needle,replacement){
+                    haystackText = document.getElementById("haystack").innerHTML;
+                    var match = new RegExp(needle,"ig");
+                    var replaced ="";
+
+                    if(replacement.length>0){
+                    replaced = haystackText.replace(match,replacement);
+                   }
+                       else
+                               {
+
+                                  var boldText ="<div style=\"background-color:yellow;display:inline; font-weight:bold;\"> " + needle +"</div>"
+                                   ;
+                                   replaced = haystackText.replace(match.boldText);
+                                }
+                                  document.getElementById("haystack").innerHTML = replaced;
+                                }
+
+       
+           </script>
+        
+                        
+	</body>
+    </html>
